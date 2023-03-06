@@ -1,21 +1,14 @@
 ---
 title: "About"
-date: 2017-08-20T21:38:52+08:00
-lastmod: 2017-08-28T21:41:52+08:00
+date: 2023-03-06T15:30:52+08:00
+lastmod: 2023-03-06T15:30:52+08:00
 menu: "main"
 weight: 50
 
 ---
 
-Hugo is a static site engine written in Go.
+I am learning to write code.
 
+My wife is working on teaching Chinese. We are living a modest life with our cat Taco in Salt Lake City, US.
 
-It makes use of a variety of open source projects including:
-
-* [Cobra](https://github.com/spf13/cobra)
-* [Viper](https://github.com/spf13/viper)
-* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
-* [Cast](https://github.com/spf13/cast)
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
-
+Good luck with us and love never fades away.
