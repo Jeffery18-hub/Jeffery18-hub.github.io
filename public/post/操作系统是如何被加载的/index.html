@@ -164,9 +164,7 @@
 <h2 id="计算机通电后-操作系统是如何开始运行的">计算机通电后，操作系统是如何开始运行的？</h2>
 <p>首先，计算机主板（mother board）上几个关键硬件：BIOS ，主存（RAM），硬盘（Hard Disk），CPU。</p>
 <p>Bios</p>
-<figure><img src="./images/os.png"/>
-</figure>
-
+<p><img src="/images/os.png" alt="os.png"></p>
 <h3 id="第一步-加载bios">第一步：加载BIOS</h3>
 <p>BIOS指的是Basic Input/Output System，主板上的一个固件程序（Firmware），这些固件程序通常是预装在主板上的，主板制造商会将固件程序编译成二进制文件，写入BIOS芯片中（固件程序一般是用汇编语言编写）。计算机通电启动时，BIOS会被加载到主存上，自动执行一系列固定程序来检测计算机硬件是否正常，例如检测内存、硬盘、键盘、鼠标等外部设备，并且根据预设的启动顺序查找硬盘上的引导程序（boot loader）。
 CPU的指令寄存器（Instruction Pointer）会指向主存上BIOS指令的起始地址0xFFFF0（上图红色虚线指向的第一个位置）。当CPU执行一条指令时，它会将指令指针自增以指向下一条指令的地址。</p>
