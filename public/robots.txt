@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://jeffery18-hub.github.io/myBlog/sitemap.xml
