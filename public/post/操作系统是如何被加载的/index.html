@@ -26,23 +26,23 @@
 <meta name="generator" content="Hugo 0.110.0 with theme even" />
 
 
-<link rel="canonical" href="https://jeffery18-hub.github.io/myBlog/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%98%AF%E5%A6%82%E4%BD%95%E8%A2%AB%E5%8A%A0%E8%BD%BD%E7%9A%84/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/myBlog/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/myBlog/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/myBlog/favicon-16x16.png">
-<link rel="manifest" href="/myBlog/manifest.json">
-<link rel="mask-icon" href="/myBlog/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="canonical" href="https://Jeffery18-hub.github.io/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%98%AF%E5%A6%82%E4%BD%95%E8%A2%AB%E5%8A%A0%E8%BD%BD%E7%9A%84/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
 
 
 
-<link href="/myBlog/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
 <meta property="og:title" content="操作系统是如何被加载的？" />
 <meta property="og:description" content="最近在学习计算机操作系统，感觉知识比较庞杂，难度对于我来说还是挺大的，深感很有必要写一点笔记，多思考、多总结、多输出方能领会一二。第一篇文章" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jeffery18-hub.github.io/myBlog/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%98%AF%E5%A6%82%E4%BD%95%E8%A2%AB%E5%8A%A0%E8%BD%BD%E7%9A%84/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://Jeffery18-hub.github.io/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%98%AF%E5%A6%82%E4%BD%95%E8%A2%AB%E5%8A%A0%E8%BD%BD%E7%9A%84/" /><meta property="article:section" content="post" />
 
 <meta property="article:modified_time" content="2023-03-06T10:47:37-07:00" />
 <meta itemprop="name" content="操作系统是如何被加载的？">
@@ -76,15 +76,15 @@
 </div>
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
-    <a href="/myBlog/">
+    <a href="/">
         <li class="mobile-menu-item">Home</li>
-      </a><a href="/myBlog/post/">
+      </a><a href="/post/">
         <li class="mobile-menu-item">Archives</li>
-      </a><a href="/myBlog/tags/">
+      </a><a href="/tags/">
         <li class="mobile-menu-item">Tags</li>
-      </a><a href="/myBlog/categories/">
+      </a><a href="/categories/">
         <li class="mobile-menu-item">Categories</li>
-      </a><a href="/myBlog/about/">
+      </a><a href="/about/">
         <li class="mobile-menu-item">About</li>
       </a>
   </ul>
@@ -107,15 +107,15 @@
 <nav class="site-navbar">
   <ul id="menu" class="menu">
     <li class="menu-item">
-        <a class="menu-item-link" href="/myBlog/">Home</a>
+        <a class="menu-item-link" href="/">Home</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/myBlog/post/">Archives</a>
+        <a class="menu-item-link" href="/post/">Archives</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/myBlog/tags/">Tags</a>
+        <a class="menu-item-link" href="/tags/">Tags</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/myBlog/categories/">Categories</a>
+        <a class="menu-item-link" href="/categories/">Categories</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/myBlog/about/">About</a>
+        <a class="menu-item-link" href="/about/">About</a>
       </li>
   </ul>
 </nav>
@@ -164,7 +164,7 @@
 <h2 id="计算机通电后-操作系统是如何开始运行的">计算机通电后，操作系统是如何开始运行的？</h2>
 <p>首先，计算机主板（mother board）上几个关键硬件：BIOS ，主存（RAM），硬盘（Hard Disk），CPU。</p>
 <p>Bios</p>
-<figure><img src="/images/os.png"/>
+<figure><img src="./images/os.png"/>
 </figure>
 
 <h3 id="第一步-加载bios">第一步：加载BIOS</h3>
@@ -244,7 +244,7 @@ boot loader主要负责在计算机启动时加载操作系统内核（kernel）
       <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
       <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
       <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
-  <a href="https://jeffery18-hub.github.io/myBlog/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="https://Jeffery18-hub.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">
@@ -279,7 +279,7 @@ boot loader主要负责在计算机启动时加载操作系统内核（kernel）
 
 
 
-<script type="text/javascript" src="/myBlog/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
 
 
 
