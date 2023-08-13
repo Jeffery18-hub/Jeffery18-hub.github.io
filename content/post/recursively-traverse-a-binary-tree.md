@@ -3,6 +3,8 @@ title = "Recursively Traverse a Binary Tree"
 lastmod = 2023-08-13T12:22:51-06:00
 draft = false
 author = "Jeffery@slc"
+tags = ["binary tree", "leetcode"]
+categories = ["Tech/技术"]
 +++
 
 ## Traversal Order {#traversal-order}
