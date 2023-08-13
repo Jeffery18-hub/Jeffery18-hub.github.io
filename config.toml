@@ -201,9 +201,6 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   [markup.goldmark.renderer]
     unsafe = true
 
-[taxonomies]
-  tag = "tags"
-  category = "categories"
 
 
 # 将下面这段配置取消注释可以使 hugo 生成 .md 文件
