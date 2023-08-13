@@ -5,48 +5,6 @@
 
 * Blog Ideas
 
-** TODO Convert List to Array in Java 
-:PROPERTIES:
-:EXPORT_FILE_NAME: convert-list-to-array-in-java
-:END:
-
-*** one-dimension array
-#+begin_src java
-List<Integer> list1 = new ArrayList<>();
-list1.addAll(Arrays.asList(1, 2, 3));
-
-// convert list to Integer array
-Object[] arr1 = list1.toArray();
-
-// convert list to Integer array
-Integer[] arr2 = list1.toArray(new Integer[0]); // smaller size
-Integer[] arr3 = list1.toArray(new Integer[list1.size()]); // same size as list
-Integer[] arr4 = list1.toArray(new Integer[list1.size()+1]); // bigger size, will lead to null
-#+end_src
-
-
-*** lamda expression
-**** annonymous inner class
-#+begin_src java
-new Thread(new Runnable() {
-	      @Override
-	      public void run() {
-		  System.out.println("hello world");
-	      }
-	  }).start();
-#+end_src
-
-**** lamda
-#+begin_src java
-new Thread(()-> System.out.println("hello world - lamda")).start();
-#+end_src
-
-
-省略规则：
- 1. 参数类型可以省略
- 2. 方法体只有一句话，花括号、分号以及return 三者都可以省略
- 3. 方法只有一个参数时圆括号可以省略
-
     
 ** finished TODO 操作系统是如何被加载的？
 :PROPERTIES:
@@ -97,3 +55,98 @@ BootLoader将硬盘上存储的操作系统内核加载到相应的的内存地�
 2. 清华大学 陈渝 操作系统原理课程 B站有很多他的课程视频<br>
 3. intel官方网站：https://www.intel.com/content/www/us/en/gaming/resources/how-to-update-bios.html
 
+   
+** finished Recursively Traverse a Binary Tree
+:PROPERTIES:
+:EXPORT_FILE_NAME: recursively-traverse-a-binary-tree
+:END:
+
+*** Traversal Order
+A binary tree offers three primary traversal methods: Pre-order, In-order, and Post-order.
+
+#+BEGIN_EXAMPLE
+
+     1
+    / \
+   2   3
+  / \   \
+ 4  5    6
+#+END_EXAMPLE
+
+pre-order: 1->2->4->5->3->6  
+in-order: 4->2->5->1->3->6  
+post-prder: 4->5->2->6->3->1  
+
+The root node appears first in pre-order traversal and last in post-order traversal.
+Leveraging this characteristic, one can uniquely construct a binary tree when provided with combinations of preorder-inorder or postorder-inorder arrays.
+Note that combinations of preorder-postorder arrays aren't sufficient for unique tree construction.
+
+*** Traverse Recursively
+Starting from the root node, the natural flow in a recursive traversal aligns with a pre-order traversal.
+#+BEGIN_SRC java
+  void traverse(TreeNode root) {
+      //base case
+      if(root == null) return;
+      traverse(root.left); // left subtree
+      traverse(root.right); // right subtree
+      return;
+  }
+#+END_SRC
+
+
+The code above just traverses the binary tree without performing any additional operations. Let’s enhance this by printing the node values.
+#+BEGIN_SRC java
+  void traverse(TreeNode root) {
+      if(root == null) return;
+      System.out.println(root.val); 
+      traverse(root.left);
+      traverse(root.right);
+      return;
+  }
+#+END_SRC
+
+Here, during traversal, each node's value is printed out. This is indicative of pre-order traversal where the node's value is processed before its left and right children.
+
+Let's illustrate the methods to traverse and print node values using in-order and post-order approaches.
+#+BEGIN_SRC java
+  // in-order
+  void traverse(TreeNode root) {
+      if(root == null) return;
+      traverse(root.left);
+      System.out.println(root.val); // handling in the mid of left and right
+      traverse(root.right);
+      return;
+  }
+#+END_SRC
+
+
+#+BEGIN_SRC java
+  // post-order
+  void traverse(TreeNode root) {
+      if(root == null) return;
+      traverse(root.left);
+      traverse(root.right);
+      System.out.println(root.val); // handling at last
+      return;
+  }
+#+END_SRC
+
+
+*** Backtracking
+For in-order and post-order traversal, the timing of the node processing varies. The node processing occurs during the backtracking phase.
+
+Example of postorder traversal
+
+![tree2.png](/images/tree2.png)
+
+
+The red dotted lines represent the backtracking, and the green numbers signify the sequence of steps:
+
+Steps 1.1 to 1.3: Traverse left until the leftmost leaf node (value 4).
+Steps 1.4 to 1.6: Leaf node's left and right children are null, so return to the leaf node and print the value 4.
+Step 1.7: Return to node 2.
+Step 1.8: Traverse to the right child node (value 5).
+Steps 1.9 to 2.2: As both the left and right children of the leaf node are null, return to the leaf node and print the value 5.
+Step 2.3: Return to node 2 and print its value, resulting in the post-order output 4->5->2 for the left subtree.
+
+This is just a segment of the recursive process, providing my understanding into the mechanics of tree traversal when gruelingly grinding on LeetCode.
