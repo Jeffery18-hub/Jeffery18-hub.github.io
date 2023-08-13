@@ -140,12 +140,8 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     clientSecret = ""       # Your client secret
 
   [params.utterances]       # https://utteranc.es/
-    src = "https://utteranc.es/client.js"
-    label = "comment/评论"
-    theme = "github-light"
-    crossorigin = "anonymous"
     owner = "Jeffery18-hub"              # Your GitHub ID
-    repo = "Jeffery18-hub/Jeffery18-hub.github.io"               # The repo to store comments
+    repo = "Jeffery18-hub.github.io"               # The repo to store comments
 
   [params.gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
     owner = ""              # Your GitHub ID
