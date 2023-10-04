@@ -3,6 +3,8 @@ title = "Three.js Fundamentals"
 lastmod = 2023-10-04T11:39:57-06:00
 draft = false
 author = "Jeffery@slc"
+tags = ["three.js"]
+categories = ["Tech/技术"]
 +++
 
 This blog post is primarily intended to document my learning journey with three.js.
