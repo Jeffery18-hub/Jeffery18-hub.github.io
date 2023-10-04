@@ -403,3 +403,105 @@ The 2D DP array dp[i][j] now represents the maximum number of strings that can b
     }
 }
 #+END_SRC
+
+** finished Three.js Fundamentals
+:PROPERTIES:
+:EXPORT_FILE_NAME: three-dot-js-fundamentals
+:END:
+
+- State "finished"   from              [2023-10-04 Wed 11:39]
+This blog post is primarily intended to document my learning journey with three.js.
+At its core, this framework is a JavaScript library built on top of WebGL, designed to help developers efficiently create 3D models and scenes.
+Here are some fundamental concepts and code snippets:
+
+*** Primary Classes
+First, let's take a glance at the structural diagram:
+![structure.png](/images/threejsBasics/structure.png)
+
+**** Renderer
+As seen from the above structural diagram, right at the top is the Renderer object.
+The renderer is responsible for continuously rendering images to the browser's canvas.
+It takes in a camera and a scene as its parameters. In essence, it renders (or draws) the portion of the 3D scene that
+lies within the camera's frustum onto Ca canvas, presenting it as a 2D image.
+
+**** Scene
+The scene object is akin to a movie set. It contains actors, props, backgrounds, lights, and more.
+However, it's crucial to note that the scene class and the camera class are paralleled.
+There's no need to add the camera to the scene. Objects added to a scene, or the children of the scene, are positioned and oriented relative to their parent.
+
+**** Camera
+The camera object captures the scene. Its settings, such as the field of view, near position, and far position, can be adjusted.
+![camera1.png](/images/threejsBasics/camera1.png)
+This overhead view gives a clearer perspective on the relative positions of the camera and scene objects on the coordinate axes.
+![camera2.png](/images/threejsBasics/camera2.png)
+By default, the camera looks down the -Z axis with +Y up. If our mesh is positioned at the origin, we'd need to move the camera slightly back from the origin
+to view anything.
+
+#+BEGIN_SRC Javascript
+camera.position.z = positive number;
+#+END_SRC
+
+**** Mesh
+Mesh objects represent the pairing of specific Geometry with a Material. Both Material and Geometry can be associated with multiple Mesh objects.
+#+BEGIN_SRC Javascript
+    const cube = new THREE.Mesh(boxGeometry, material);
+#+END_SRC
+The cube example above demonstrates the constructor of a mesh, requiring a boxGeometry and a material object.
+
+**** Geometry
+Geometries symbolize the vertex data of objects like spheres, cubes, planes, animals, humans, trees, buildings, and more.
+Three.js offers numerous built-in geometry primitives, but you can also create custom geometries or load geometries from files.
+
+#+BEGIN_SRC Javascript
+  // Data of a box
+    const boxWidth = 1;
+    const boxHeight = 1;
+    const boxDepth = 1;
+    const boxGeometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+#+END_SRC
+
+**** Material
+Materials depict the surface properties employed for drawing geometries.
+This includes attributes like the color and shininess. A Material can also reference Texture objects, which can, for instance,
+wrap an image onto a geometry's surface.
+
+**** Texture
+Textures typically symbolize images loaded from image files, generated from a canvas, or rendered from another scene.
+
+**** Light
+The Light object is relatively straightforward. Three.js has embedded types of light sources such as point light, ambient light, and directional light, among others.
+
+*** Animation
+Without it, the rendered content in the browser would just be a static 2D image. The browser provides a function called requestAnimationFrame
+that forms a so-called render loop by accepting a drawing callback function. In essence, it continuously draws images frame-by-frame on the canvas.
+Suppose your browser operates at 60 frames per second. That means it refreshes roughly every 16ms. When you invoke requestAnimationFrame(callback),
+you're essentially making a request to the browser to execute the callback after this 16ms duration.
+It's merely a reservation at this point, as requestAnimationFrame operates asynchronously and doesn't disrupt subsequent code execution.
+
+#+BEGIN_SRC Javascript
+    const animate = (currTime ) => {
+        requestAnimationFrame(animate);
+        cube.rotation.y += 0.01;
+        renderer.render(scene, camera);
+    }
+    animate();
+#+END_SRC
+
+The code above demonstrates continuously rotating a cube around the y-axis.
+
+*** Details
+Lastly, a quick detail from the documentation to touch upon:
+A canvas's internal size, often termed its drawing buffer size, can be set in three.js by calling renderer.setSize.
+So, what size should we opt for? The obvious answer is "the same size the canvas is displayed".
+
+Using my code as an example:
+#+BEGIN_SRC Javascript
+   const renderer = new THREE.WebGLRenderer({ antialias: true });
+   renderer.setSize(window.innerWidth, window.innerHeight);
+   document.body.appendChild(renderer.domElement); // domElement is the canvas returned from the renderer
+#+END_SRC
+
+When you call renderer.setSize(window.innerWidth, window.innerHeight), you're essentially instructing THREE.js: “I want the 3D content I'm rendering
+to fill the entire browser window, and I'd like the size of the <canvas> element itself to be adjusted to this size.”
+This ensures that your 3D content appears both clear and undistorted in the browser window.
+
