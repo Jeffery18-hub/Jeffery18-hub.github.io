@@ -504,4 +504,95 @@ Using my code as an example:
 When you call renderer.setSize(window.innerWidth, window.innerHeight), you're essentially instructing THREE.js: “I want the 3D content I'm rendering
 to fill the entire browser window, and I'd like the size of the <canvas> element itself to be adjusted to this size.”
 This ensures that your 3D content appears both clear and undistorted in the browser window.
+** finished Functions in Kotlin
+:PROPERTIES:
+:EXPORT_FILE_NAME: functions-in-kotlin
+:END:
 
+
+- State "finished"   from              [2023-10-10 Tue 12:24]
+In this post, I aim to summarize the essential aspects of function syntax in Kotlin. While this post touches upon some commonly used functionalities, especially in Android development,
+it doesn't delve deep into the advanced usages.
+
+*** Regular Functions
+Regular functions are the basic building blocks. Here's a simple function that compares the lengths of two strings:
+
+#+BEGIN_SRC kotlin
+fun compare(a: String, b: String): Boolean {
+    return a.length < b.length
+}
+#+END_SRC
+
+It's necessary to specify the types of parameters. However, the return type can often be inferred by the compiler.
+
+**** Default Arguments
+Functions can have default values for their parameters. For instance:
+
+#+BEGIN_SRC kotlin
+fun compare(a: String = "hello", b: String = "hi"): Boolean {
+    return a.length < b.length
+}
+#+END_SRC
+
+This allows you to call the function as `compare()` or `compare("hi", "hello")`.
+
+*** Single-expression Functions
+For functions comprising just a single expression, you can drop the curly braces and use the `=` symbol:
+
+#+BEGIN_SRC kotlin
+fun double(x: Int): Int = x * 2
+#+END_SRC
+
+Moreover, if the compiler can infer the return type, you can omit it:
+
+#+BEGIN_SRC kotlin
+fun double(x: Int) = x * 2
+#+END_SRC
+
+*** Generic Functions
+Generics enable functions to operate on different data types, ensuring code reusability and type safety.
+
+#+BEGIN_SRC kotlin
+fun <T> printMe(value: T) {
+    println(value)
+}
+
+// You can call the function with any data type:
+printMe("Hello")
+printMe(25)
+#+END_SRC
+
+*** Lambdas
+In Kotlin, functions are first-class, meaning they can be stored in variables, passed around, and returned from other functions.
+
+**** Defining Function Types
+Function types can be defined similar to other types:
+
+#+BEGIN_SRC kotlin
+val onClick: () -> Unit = { println("hello") }
+#+END_SRC
+
+Here, `onClick` is a variable of a function type. This function takes no arguments and returns `Unit` (similar to `void` in other languages).
+
+**** Lambda Expressions
+Lambda expressions, or simply lambdas, represent small chunks of code. They can be used primarily to define inline functions. The syntax is concise:
+
+#+BEGIN_SRC 
+val sum: (Int, Int) -> Int = { x, y -> x + y }
+#+END_SRC
+
+In this lambda:
+- The expression is enclosed in curly braces.
+- The parameter types can be omitted if they can be inferred.
+- The lambda body follows the `->` symbol.
+- If the return type isn't `Unit`, the last expression is taken as the return value.
+
+**** Trailing Lambdas
+A nifty Kotlin feature is the ability to move lambdas out of parentheses if they're the last argument in a function call:
+
+#+BEGIN_SRC kotlin
+fun foo(x: String, y: String, z: (a: String, b: String) -> Boolean) {
+    println(z(x,y))
+}
+foo("hi", "hello") { a, b -> a.length < b.length }
+#+END_SRC
