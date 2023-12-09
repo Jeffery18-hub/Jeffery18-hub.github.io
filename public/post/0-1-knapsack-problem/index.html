@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>0-1 Knapsack Problem - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Jeffery@slc" /><meta name="description" content="Introduction to the 0-1 Knapsack Problem The 0-1 Knapsack problem is a classic optimization problem. Imagine you have a bag with a certain weight capacity, and you have a set of items, each with its own weight and value. The problem is to determine which items to include in the bag to maximize its total value without exceeding its weight capacity. Brute Force The simplest way to tackle the 0-1" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="https://Jeffery18-hub.github.io/post/0-1-knapsack-problem/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="0-1 Knapsack Problem" />
+<meta property="og:description" content="Introduction to the 0-1 Knapsack Problem The 0-1 Knapsack problem is a classic optimization problem. Imagine you have a bag with a certain weight capacity, and you have a set of items, each with its own weight and value. The problem is to determine which items to include in the bag to maximize its total value without exceeding its weight capacity. Brute Force The simplest way to tackle the 0-1" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Jeffery18-hub.github.io/post/0-1-knapsack-problem/" /><meta property="article:section" content="post" />
+
+<meta property="article:modified_time" content="2023-10-01T23:17:32-06:00" />
+<meta itemprop="name" content="0-1 Knapsack Problem">
+<meta itemprop="description" content="Introduction to the 0-1 Knapsack Problem The 0-1 Knapsack problem is a classic optimization problem. Imagine you have a bag with a certain weight capacity, and you have a set of items, each with its own weight and value. The problem is to determine which items to include in the bag to maximize its total value without exceeding its weight capacity. Brute Force The simplest way to tackle the 0-1">
+<meta itemprop="dateModified" content="2023-10-01T23:17:32-06:00" />
+<meta itemprop="wordCount" content="1202">
+<meta itemprop="keywords" content="Knapsack Problem,leetcode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="0-1 Knapsack Problem"/>
+<meta name="twitter:description" content="Introduction to the 0-1 Knapsack Problem The 0-1 Knapsack problem is a classic optimization problem. Imagine you have a bag with a certain weight capacity, and you have a set of items, each with its own weight and value. The problem is to determine which items to include in the bag to maximize its total value without exceeding its weight capacity. Brute Force The simplest way to tackle the 0-1"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jun</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jun</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">0-1 Knapsack Problem</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-10-01 </span>
+        <div class="post-category">
+            <a href="/categories/tech/%E6%8A%80%E6%9C%AF/"> Tech/技术 </a>
+            </div>
+          <span class="more-meta"> 1202 words </span>
+          <span class="more-meta"> 3 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction-to-the-0-1-knapsack-problem">Introduction to the 0-1 Knapsack Problem</a></li>
+        <li><a href="#brute-force">Brute Force</a></li>
+        <li><a href="#dynamic-programming-with-2d-dp-array">Dynamic Programming with 2D dp array</a></li>
+        <li><a href="#dynamic-programming-with-1d-dp-array">Dynamic Programming with 1D dp array</a></li>
+        <li><a href="#test-results">Test Results</a></li>
+        <li><a href="#leetcode-474-dot-ones-and-zeroes">Leetcode 474. Ones and Zeroes</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="introduction-to-the-0-1-knapsack-problem">Introduction to the 0-1 Knapsack Problem</h2>
+<p>The 0-1 Knapsack problem is a classic optimization problem. Imagine you have a bag with a certain weight capacity, and you have a set of items, each with its own weight and value.
+The problem is to determine which items to include in the bag to maximize its total value without exceeding its weight capacity.</p>
+<h2 id="brute-force">Brute Force</h2>
+<p>The simplest way to tackle the 0-1 Knapsack problem is using a brute-force method. Here, we evaluate every possible combination of items:</p>
+<p>For each item, we can either choose to include it in the bag or leave it out, leading to two choices for each item.
+This decision-making can be visualized as a binary tree structure, where each node represents a choice, and each level of the tree corresponds to an item.
+Given n items, the total number of combinations is 2^n, leading to a time complexity of O(2^n).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"> <span class="kd">class</span> <span class="nc">Solution_bruteforce</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">maxValue</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">[]</span> <span class="n">weights</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">[]</span> <span class="n">values</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">bagCapacity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">bruteforce</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">weights</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">values</span><span class="o">,</span> <span class="kt">int</span> <span class="n">bagCapacity</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">weights</span> <span class="o">=</span> <span class="n">weights</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">values</span> <span class="o">=</span> <span class="n">values</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">this</span><span class="o">.</span><span class="na">bagCapacity</span> <span class="o">=</span> <span class="n">bagCapacity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">      <span class="n">dfs</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">maxValue</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">curValue</span><span class="o">,</span> <span class="kt">int</span> <span class="n">curWeight</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">//base case
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">if</span><span class="o">(</span><span class="n">curWeight</span> <span class="o">&gt;</span> <span class="n">bagCapacity</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">if</span><span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="n">weights</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">          <span class="n">maxValue</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">maxValue</span><span class="o">,</span> <span class="n">curValue</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="n">maxValue</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">maxValue</span><span class="o">,</span> <span class="n">curValue</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// choose the Nth item
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="n">dfs</span><span class="o">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span>  <span class="n">curValue</span> <span class="o">+</span> <span class="n">values</span><span class="o">[</span><span class="n">n</span><span class="o">],</span> <span class="n">curWeight</span> <span class="o">+</span> <span class="n">weights</span><span class="o">[</span><span class="n">n</span><span class="o">]);</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// not choose the nth item
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="n">dfs</span><span class="o">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">curValue</span> <span class="o">,</span> <span class="n">curWeight</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="dynamic-programming-with-2d-dp-array">Dynamic Programming with 2D dp array</h2>
+<p>Dynamic Programming (DP) offers a more efficient way to solve the problem. Instead of recalculating results, we store them in a table (usually a 2D array) and refer back to them when needed:</p>
+<p>dp[i][j] denotes the maximum value that can be obtained using the first i items, considering a bag capacity of j.
+To populate this table, we use previously computed values, building up the solution incrementally.
+This method reduces the time complexity to O(m*n), where m is the number of items and n is the bag&rsquo;s capacity.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution_dp</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">dp</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">weights</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">values</span><span class="o">,</span> <span class="kt">int</span> <span class="n">bagCapacity</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kt">int</span><span class="o">[][]</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">weights</span><span class="o">.</span><span class="na">length</span><span class="o">][</span><span class="n">bagCapacity</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span> <span class="c1">// means max value can be stored in bagCapacity
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// init first column
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">weights</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">          <span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// init first row
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">bagCapacity</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">          <span class="n">dp</span><span class="o">[</span><span class="mi">0</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="o">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">weights</span><span class="o">[</span><span class="mi">0</span><span class="o">])</span> <span class="o">?</span> <span class="n">values</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">:</span> <span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">weights</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">          <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">bagCapacity</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">              <span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">dp</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">],</span>
+</span></span><span class="line"><span class="cl">                      <span class="o">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="n">weights</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">?</span> <span class="n">dp</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">j</span> <span class="o">-</span> <span class="n">weights</span><span class="o">[</span><span class="n">i</span><span class="o">]]</span> <span class="o">+</span> <span class="n">values</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">:</span> <span class="n">dp</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">j</span><span class="o">]);</span>
+</span></span><span class="line"><span class="cl">          <span class="o">}</span>
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// print the dp array
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">weights</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">          <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">bagCapacity</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">              <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">+</span> <span class="s">&#34; &#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">          <span class="o">}</span>
+</span></span><span class="line"><span class="cl">          <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">      <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="dynamic-programming-with-1d-dp-array">Dynamic Programming with 1D dp array</h2>
+<p>Observing the 2D DP solution, a pattern emerges. The value in a cell only depends on values from the previous row( dp[i][j] = max( dp[i -1][j], dp[i - 1][j - weights[i]] + values[i]))) :</p>
+<p>This observation allows us to compress the 2D table into a 1D array, further reducing space complexity.
+The idea is to process the items one by one, and for each item, iterate through the array in reverse (must do it in reverse order of weight, for not overwriting the previous state)), updating its values.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution_dp_compress</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">dp_compress</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">weights</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">values</span><span class="o">,</span> <span class="kt">int</span> <span class="n">bagCapacity</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">         <span class="kt">int</span><span class="o">[]</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">bagCapacity</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">         <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">         <span class="c1">// init dp
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>         <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">             <span class="n">dp</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">         <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">             <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">bagCapacity</span><span class="o">;</span> <span class="n">j</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">--)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">dp</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">dp</span><span class="o">[</span><span class="n">j</span><span class="o">],</span> <span class="o">(</span><span class="n">j</span> <span class="o">-</span> <span class="n">weights</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="o">)?</span> <span class="n">dp</span><span class="o">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">weights</span><span class="o">[</span><span class="n">i</span><span class="o">]]</span> <span class="o">+</span> <span class="n">values</span><span class="o">[</span><span class="n">i</span><span class="o">]:</span><span class="mi">0</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">             <span class="o">}</span>
+</span></span><span class="line"><span class="cl">         <span class="o">}</span>
+</span></span><span class="line"><span class="cl">         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dp</span><span class="o">[</span><span class="n">dp</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]);</span>
+</span></span><span class="line"><span class="cl">     <span class="o">}</span>
+</span></span><span class="line"><span class="cl"> <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="test-results">Test Results</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// three objects: 0, 1, 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="kt">int</span><span class="o">[]</span> <span class="n">weights</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span> <span class="o">};</span>
+</span></span><span class="line"><span class="cl">      <span class="kt">int</span><span class="o">[]</span> <span class="n">values</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">15</span><span class="o">,</span> <span class="mi">20</span><span class="o">,</span> <span class="mi">30</span> <span class="o">};</span>
+</span></span><span class="line"><span class="cl">      <span class="kt">int</span> <span class="n">bagCapacity</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">     <span class="n">Solution_bruteforce</span> <span class="n">s2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Solution_bruteforce</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">     <span class="n">s2</span><span class="o">.</span><span class="na">bruteforce</span><span class="o">(</span><span class="n">weights</span><span class="o">,</span> <span class="n">values</span><span class="o">,</span> <span class="n">bagCapacity</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">     <span class="c1">// result: 35
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">     <span class="n">Solution_dp</span> <span class="n">s</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Solution_dp</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">     <span class="n">s</span><span class="o">.</span><span class="na">dp</span><span class="o">(</span><span class="n">weights</span><span class="o">,</span> <span class="n">values</span><span class="o">,</span> <span class="n">bagCapacity</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">     <span class="c1">// print out:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>     <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">       0 15 15 15 15
+</span></span></span><span class="line"><span class="cl"><span class="cm">       0 15 15 20 35
+</span></span></span><span class="line"><span class="cl"><span class="cm">       0 15 15 20 35
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">     <span class="n">Solution_dp_compress</span> <span class="n">s3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Solution_dp_compress</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">     <span class="n">s3</span><span class="o">.</span><span class="na">dp_compress</span><span class="o">(</span><span class="n">weights</span><span class="o">,</span> <span class="n">values</span><span class="o">,</span> <span class="n">bagCapacity</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">     <span class="c1">// result: 35
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="leetcode-474-dot-ones-and-zeroes">Leetcode 474. Ones and Zeroes</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">You are given an array of binary strings strs and two integers m and n.
+</span></span><span class="line"><span class="cl">Return the size of the largest subset of strs such that there are at most m 0&#39;s and n 1&#39;s in the subset.
+</span></span><span class="line"><span class="cl">A set x is a subset of a set y if all elements of x are also elements of y.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Example 1:
+</span></span><span class="line"><span class="cl">Input: strs = [&#34;10&#34;,&#34;0001&#34;,&#34;111001&#34;,&#34;1&#34;,&#34;0&#34;], m = 5, n = 3
+</span></span><span class="line"><span class="cl">Output: 4
+</span></span><span class="line"><span class="cl">Explanation: The largest subset with at most 5 0&#39;s and 3 1&#39;s is {&#34;10&#34;, &#34;0001&#34;, &#34;1&#34;, &#34;0&#34;}, so the answer is 4.
+</span></span><span class="line"><span class="cl">Other valid but smaller subsets include {&#34;0001&#34;, &#34;1&#34;} and {&#34;10&#34;, &#34;1&#34;, &#34;0&#34;}.
+</span></span><span class="line"><span class="cl">{&#34;111001&#34;} is an invalid subset because it contains 4 1&#39;s, greater than the maximum of 3.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The problem of selecting binary strings with a constraint on the number of zeros and ones is a twist on the 0-1 Knapsack problem:</p>
+<p>Instead of a single weight capacity, we now have two: m for the number of zeros and n for the number of ones.
+The 2D DP array dp[i][j] now represents the maximum number of strings that can be formed with i zeros and j ones..</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">  <span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">findMaxForm</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">strs</span><span class="o">,</span> <span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span><span class="o">[][]</span> <span class="n">dp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="o">][</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">strs</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span> <span class="o">=</span> <span class="n">getZerosNOnes</span><span class="o">(</span><span class="n">strs</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">m</span><span class="o">;</span> <span class="n">j</span> <span class="o">&gt;=</span><span class="mi">0</span><span class="o">;</span> <span class="n">j</span><span class="o">--)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">n</span><span class="o">;</span> <span class="n">k</span><span class="o">&gt;=</span><span class="mi">0</span><span class="o">;</span> <span class="n">k</span><span class="o">--)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">int</span> <span class="n">thisState</span> <span class="o">=</span> <span class="o">(</span><span class="n">j</span> <span class="o">-</span> <span class="n">nums</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">k</span> <span class="o">-</span> <span class="n">nums</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">)?</span> <span class="n">dp</span><span class="o">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">nums</span><span class="o">[</span><span class="mi">0</span><span class="o">]][</span><span class="n">k</span> <span class="o">-</span> <span class="n">nums</span><span class="o">[</span><span class="mi">1</span><span class="o">]]</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="o">;</span> <span class="c1">// if i is chosen, the size is incremented by one
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">dp</span><span class="o">[</span><span class="n">j</span><span class="o">][</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">dp</span><span class="o">[</span><span class="n">j</span><span class="o">][</span><span class="n">k</span><span class="o">],</span> <span class="n">thisState</span><span class="o">);</span> <span class="c1">// dynamic formula
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">dp</span><span class="o">[</span><span class="n">m</span><span class="o">][</span><span class="n">n</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">getZerosNOnes</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">zeros</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">ones</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="o">(</span><span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="n">str</span><span class="o">.</span><span class="na">toCharArray</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;0&#39;</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">zeros</span><span class="o">++;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ones</span><span class="o">++;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="n">zeros</span><span class="o">,</span> <span class="n">ones</span><span class="o">};</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Jeffery@slc</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2023-10-01
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/knapsack-problem/">Knapsack Problem</a>
+          <a href="/tags/leetcode/">leetcode</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/three-dot-js-fundamentals/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Three.js Fundamentals</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/%E5%9D%8E%E6%98%86%E4%B9%8B%E6%97%85/">
+            <span class="next-text nav-default">坎昆之旅</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+     <div id="cusdis_thread"
+	 data-host="https://cusdis.com"
+	 data-app-id="aadc1f53-1b60-4e53-a4fa-4eafef613066"
+	 data-page-id="76ad2df7bd378bbe9c3221d48091e64a"
+	 data-page-url="https://Jeffery18-hub.github.io/post/0-1-knapsack-problem/"
+	 data-page-title="0-1 Knapsack Problem"
+	 ></div>
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ljzmcs@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/jun-li-993b6b79/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/Jeffery18-hub" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/43710543/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://Jeffery18-hub.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>jun</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

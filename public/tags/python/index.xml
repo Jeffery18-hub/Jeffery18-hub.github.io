@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Even - A super concise theme for Hugo</title>
+    <link>https://Jeffery18-hub.github.io/tags/python/</link>
+    <description>Recent content in python on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 09 Dec 2023 14:12:48 -0700</lastBuildDate><atom:link href="https://Jeffery18-hub.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Top K Frequent Elements and Heapq in Python</title>
+      <link>https://Jeffery18-hub.github.io/post/top-k-frequent-elements-and-heapq-in-python/</link>
+      <pubDate>Sat, 09 Dec 2023 14:12:48 -0700</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/top-k-frequent-elements-and-heapq-in-python/</guid>
+      <description>Heapq in Python This module provides an implementation of the heap queue algorithm, also known as the priority queue algorithm. Heaps are binary trees for which every parent node has a value less than or equal to any of its children. This implementation uses arrays for which heap[k] &amp;lt;= heap[2*k+1] and heap[k] &amp;lt;= heap[2*k+2] for all k, counting elements from zero. For the sake of comparison, non-existing elements are considered</description>
+    </item>
+    
+  </channel>
+</rss>

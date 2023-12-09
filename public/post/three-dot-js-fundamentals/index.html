@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Three.js Fundamentals - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Jeffery@slc" /><meta name="description" content="This blog post is primarily intended to document my learning journey with three.js. At its core, this framework is a JavaScript library built on top of WebGL, designed to help developers efficiently create 3D models and scenes. Here are some fundamental concepts and code snippets: Primary Classes First, let&amp;rsquo;s take a glance at the structural diagram: Renderer As seen from the above structural diagram, right at the top is the" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="https://Jeffery18-hub.github.io/post/three-dot-js-fundamentals/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Three.js Fundamentals" />
+<meta property="og:description" content="This blog post is primarily intended to document my learning journey with three.js. At its core, this framework is a JavaScript library built on top of WebGL, designed to help developers efficiently create 3D models and scenes. Here are some fundamental concepts and code snippets: Primary Classes First, let&rsquo;s take a glance at the structural diagram: Renderer As seen from the above structural diagram, right at the top is the" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Jeffery18-hub.github.io/post/three-dot-js-fundamentals/" /><meta property="article:section" content="post" />
+
+<meta property="article:modified_time" content="2023-10-04T11:39:57-06:00" />
+<meta itemprop="name" content="Three.js Fundamentals">
+<meta itemprop="description" content="This blog post is primarily intended to document my learning journey with three.js. At its core, this framework is a JavaScript library built on top of WebGL, designed to help developers efficiently create 3D models and scenes. Here are some fundamental concepts and code snippets: Primary Classes First, let&rsquo;s take a glance at the structural diagram: Renderer As seen from the above structural diagram, right at the top is the">
+<meta itemprop="dateModified" content="2023-10-04T11:39:57-06:00" />
+<meta itemprop="wordCount" content="723">
+<meta itemprop="keywords" content="three.js," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Three.js Fundamentals"/>
+<meta name="twitter:description" content="This blog post is primarily intended to document my learning journey with three.js. At its core, this framework is a JavaScript library built on top of WebGL, designed to help developers efficiently create 3D models and scenes. Here are some fundamental concepts and code snippets: Primary Classes First, let&rsquo;s take a glance at the structural diagram: Renderer As seen from the above structural diagram, right at the top is the"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jun</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jun</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Three.js Fundamentals</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-10-04 </span>
+        <div class="post-category">
+            <a href="/categories/tech/%E6%8A%80%E6%9C%AF/"> Tech/技术 </a>
+            </div>
+          <span class="more-meta"> 723 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#primary-classes">Primary Classes</a>
+          <ul>
+            <li><a href="#renderer">Renderer</a></li>
+            <li><a href="#scene">Scene</a></li>
+            <li><a href="#camera">Camera</a></li>
+            <li><a href="#mesh">Mesh</a></li>
+            <li><a href="#geometry">Geometry</a></li>
+            <li><a href="#material">Material</a></li>
+            <li><a href="#texture">Texture</a></li>
+            <li><a href="#light">Light</a></li>
+          </ul>
+        </li>
+        <li><a href="#animation">Animation</a></li>
+        <li><a href="#details">Details</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>This blog post is primarily intended to document my learning journey with three.js.
+At its core, this framework is a JavaScript library built on top of WebGL, designed to help developers efficiently create 3D models and scenes.
+Here are some fundamental concepts and code snippets:</p>
+<h2 id="primary-classes">Primary Classes</h2>
+<p>First, let&rsquo;s take a glance at the structural diagram:</p>
+<p align = "center">
+<img src="/images/threejsBasics/structure.png" alt=st width="600" height="400" position = "center">
+</p>
+<h3 id="renderer">Renderer</h3>
+<p>As seen from the above structural diagram, right at the top is the Renderer object.
+The renderer is responsible for continuously rendering images to the browser&rsquo;s canvas.
+It takes in a camera and a scene as its parameters. In essence, it renders (or draws) the portion of the 3D scene that
+lies within the camera&rsquo;s frustum onto Ca canvas, presenting it as a 2D image.</p>
+<h3 id="scene">Scene</h3>
+<p>The scene object is akin to a movie set. It contains actors, props, backgrounds, lights, and more.
+However, it&rsquo;s crucial to note that the scene class and the camera class are paralleled.
+There&rsquo;s no need to add the camera to the scene. Objects added to a scene, or the children of the scene, are positioned and oriented relative to their parent.</p>
+<h3 id="camera">Camera</h3>
+<p>The camera object captures the scene. Its settings, such as the field of view, near position, and far position, can be adjusted.</p>
+<p align = "center">
+<img src="/images/threejsBasics/camera1.png"  width="400" height="300">
+</p>
+This overhead view gives a clearer perspective on the relative positions of the camera and scene objects on the coordinate axes.
+<p align = "center">
+<img src="/images/threejsBasics/camera2.png"  width="400" height="300">
+</p>
+By default, the camera looks down the -Z axis with +Y up. If our mesh is positioned at the origin, we'd need to move the camera slightly back from the origin
+to view anything.
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Javascript" data-lang="Javascript"><span class="line"><span class="cl"><span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">z</span> <span class="o">=</span> <span class="nx">positive</span> <span class="nx">number</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="mesh">Mesh</h3>
+<p>Mesh objects represent the pairing of specific Geometry with a Material. Both Material and Geometry can be associated with multiple Mesh objects.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Javascript" data-lang="Javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">cube</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">(</span><span class="nx">boxGeometry</span><span class="p">,</span> <span class="nx">material</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The cube example above demonstrates the constructor of a mesh, requiring a boxGeometry and a material object.</p>
+<h3 id="geometry">Geometry</h3>
+<p>Geometries symbolize the vertex data of objects like spheres, cubes, planes, animals, humans, trees, buildings, and more.
+Three.js offers numerous built-in geometry primitives, but you can also create custom geometries or load geometries from files.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Javascript" data-lang="Javascript"><span class="line"><span class="cl"><span class="c1">// Data of a box
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kr">const</span> <span class="nx">boxWidth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">boxHeight</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">boxDepth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">boxGeometry</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">BoxGeometry</span><span class="p">(</span><span class="nx">boxWidth</span><span class="p">,</span> <span class="nx">boxHeight</span><span class="p">,</span> <span class="nx">boxDepth</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="material">Material</h3>
+<p>Materials depict the surface properties employed for drawing geometries.
+This includes attributes like the color and shininess. A Material can also reference Texture objects, which can, for instance,
+wrap an image onto a geometry&rsquo;s surface.</p>
+<h3 id="texture">Texture</h3>
+<p>Textures typically symbolize images loaded from image files, generated from a canvas, or rendered from another scene.</p>
+<h3 id="light">Light</h3>
+<p>The Light object is relatively straightforward. Three.js has embedded types of light sources such as point light, ambient light, and directional light, among others.</p>
+<h2 id="animation">Animation</h2>
+<p>Without it, the rendered content in the browser would just be a static 2D image. The browser provides a function called requestAnimationFrame
+that forms a so-called render loop by accepting a drawing callback function. In essence, it continuously draws images frame-by-frame on the canvas.
+Suppose your browser operates at 60 frames per second. That means it refreshes roughly every 16ms. When you invoke requestAnimationFrame(callback),
+you&rsquo;re essentially making a request to the browser to execute the callback after this 16ms duration.
+It&rsquo;s merely a reservation at this point, as requestAnimationFrame operates asynchronously and doesn&rsquo;t disrupt subsequent code execution.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Javascript" data-lang="Javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">animate</span> <span class="o">=</span> <span class="p">(</span><span class="nx">currTime</span> <span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animate</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">cube</span><span class="p">.</span><span class="nx">rotation</span><span class="p">.</span><span class="nx">y</span> <span class="o">+=</span> <span class="mf">0.01</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">renderer</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span> <span class="nx">camera</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">animate</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The code above demonstrates continuously rotating a cube around the y-axis.</p>
+<h2 id="details">Details</h2>
+<p>Lastly, a quick detail from the documentation to touch upon:
+A canvas&rsquo;s internal size, often termed its drawing buffer size, can be set in three.js by calling renderer.setSize.
+So, what size should we opt for? The obvious answer is &ldquo;the same size the canvas is displayed&rdquo;.</p>
+<p>Using my code as an example:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Javascript" data-lang="Javascript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">renderer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">WebGLRenderer</span><span class="p">({</span> <span class="nx">antialias</span><span class="o">:</span> <span class="kc">true</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">renderer</span><span class="p">.</span><span class="nx">domElement</span><span class="p">);</span> <span class="c1">// domElement is the canvas returned from the renderer
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>When you call renderer.setSize(window.innerWidth, window.innerHeight), you&rsquo;re essentially instructing THREE.js: “I want the 3D content I&rsquo;m rendering
+to fill the entire browser window, and I&rsquo;d like the size of the &lt;canvas&gt; element itself to be adjusted to this size.”
+This ensures that your 3D content appears both clear and undistorted in the browser window.</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Jeffery@slc</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2023-10-04
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/three.js/">three.js</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/functions-in-kotlin/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Functions in Kotlin</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/0-1-knapsack-problem/">
+            <span class="next-text nav-default">0-1 Knapsack Problem</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+     <div id="cusdis_thread"
+	 data-host="https://cusdis.com"
+	 data-app-id="aadc1f53-1b60-4e53-a4fa-4eafef613066"
+	 data-page-id="fd38d77d7da44a442ef71aeca0f8e351"
+	 data-page-url="https://Jeffery18-hub.github.io/post/three-dot-js-fundamentals/"
+	 data-page-title="Three.js Fundamentals"
+	 ></div>
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ljzmcs@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/jun-li-993b6b79/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/Jeffery18-hub" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/43710543/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://Jeffery18-hub.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>jun</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

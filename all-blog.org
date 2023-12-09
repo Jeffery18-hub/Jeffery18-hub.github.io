@@ -868,5 +868,107 @@ The English part of this blog is translated by chatGPT and below is the original
 我还是比较喜欢迭代，一是代码更加简洁，二是空间开销更少。
 
 
+** finished Top K Frequent Elements and Heapq in Python
+:PROPERTIES:
+:EXPORT_FILE_NAME: top-k-frequent-elements-and-heapq-in-python
+:END:
+
+*** Heapq in Python
+This module provides an implementation of the heap queue algorithm, also known as the priority queue algorithm.
+
+Heaps are binary trees for which every parent node has a value less than or equal to any of its children.
+This implementation uses arrays for which heap[k] <= heap[2*k+1] and heap[k] <= heap[2*k+2] for all k, counting elements from zero.
+
+For the sake of comparison, non-existing elements are considered to be infinite. The interesting property of a heap is that its smallest element is always the root, heap[0].
+
+
+**** Key Methods in Heapq
+1. initialzaiton
+2. heappush
+3  heappop
+
+Let's delve into the code snippets.  
+
+'''
+    1. python stl only has min heap, which is called heapq.
+    2. As we all know min +heap(tree structure) is a way to realize adt priority queue,
+'''
+
+
+'''two ways to initialize the heap'''
+# first method
+pq = [] # empty 
+
+heappush(pq, 1)
+heappush(pq, 2)
+heappush(pq, 0)
+
+print(pq)
+
+# second method with populated arrays
+pq2 = [3,6,1,9,0,2]
+heapify(pq2)
+print(pq2)
+
+'''init with list of tuples, compare according to the first element in tuple'''
+pq3 = [(3,1), (1,2), (5,4), (0,9)]
+heapify(pq3)
+print(pq3)
+
+'''heap sort '''
+def heap_sort(pq):
+    return [heappop(pq) for i in range(len(pq2))]
+
+sorted_pq = heap_sort(pq2)
+print(sorted_pq)
+
+for i in range(0):
+    print(i)
+
+
+
+
+*** Top k elements in Leetcode
+
+we can easily solve this problem in leetcode in less than nlogn time comlexity.
+
+**** solution
+#+BEGIN_SRC python
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        map = {}
+        
+        # dictionary for num and counts
+        for num in nums:
+            map[num] = map.get(num, 0) + 1
+        
+        # creat priority queue
+        pq = []
+
+        # push key-value pair to pq
+        for num, counts in map.items():
+            heapq.heappush(pq, (counts, num)) # sort by val-> counts
+
+            # remove the smallest count when size > k
+            if len(pq) > k:
+                heapq.heappop(pq)
+            
+        
+        # get result
+        res = []
+        for i in pq: # i is tuple with (counts, num)
+            res.append(i[1])
+        
+        return res
+#+END_SRC
+
+
+**** analysis
+
+1. The totoal time complexity  is primarily determinded by the construction of a min heap.
+
+2. Time complexity  of inserting a node into min heap is the height of tree, so here heappush will cost O(logk)
+
+3. Outer loop will iterate k times and k <= n. So the total time compelxity of this solution is O(klogk).
 
 

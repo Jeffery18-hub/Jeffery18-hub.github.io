@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Fundamentals of Git - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Jeffery@slc" /><meta name="description" content="Explore some essential aspects of the version control tool Git. Concept Initially, as a newcomer, I confused Git with GitHub (a platform), not realizing Git is fundamentally a local tool. Some refer to it as a version control tool, a file system, or even a database with key-value pairs. To harness its capabilities, it&amp;rsquo;s crucial to understand the primary command: 1 git init This command creates a .git folder in" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="https://Jeffery18-hub.github.io/post/fundamentals-of-git/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Fundamentals of Git" />
+<meta property="og:description" content="Explore some essential aspects of the version control tool Git. Concept Initially, as a newcomer, I confused Git with GitHub (a platform), not realizing Git is fundamentally a local tool. Some refer to it as a version control tool, a file system, or even a database with key-value pairs. To harness its capabilities, it&rsquo;s crucial to understand the primary command: 1 git init This command creates a .git folder in" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Jeffery18-hub.github.io/post/fundamentals-of-git/" /><meta property="article:section" content="post" />
+
+<meta property="article:modified_time" content="2023-11-08T17:51:20-07:00" />
+<meta itemprop="name" content="Fundamentals of Git">
+<meta itemprop="description" content="Explore some essential aspects of the version control tool Git. Concept Initially, as a newcomer, I confused Git with GitHub (a platform), not realizing Git is fundamentally a local tool. Some refer to it as a version control tool, a file system, or even a database with key-value pairs. To harness its capabilities, it&rsquo;s crucial to understand the primary command: 1 git init This command creates a .git folder in">
+<meta itemprop="dateModified" content="2023-11-08T17:51:20-07:00" />
+<meta itemprop="wordCount" content="726">
+<meta itemprop="keywords" content="git,github," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fundamentals of Git"/>
+<meta name="twitter:description" content="Explore some essential aspects of the version control tool Git. Concept Initially, as a newcomer, I confused Git with GitHub (a platform), not realizing Git is fundamentally a local tool. Some refer to it as a version control tool, a file system, or even a database with key-value pairs. To harness its capabilities, it&rsquo;s crucial to understand the primary command: 1 git init This command creates a .git folder in"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jun</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jun</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Fundamentals of Git</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-11-08 </span>
+        <div class="post-category">
+            <a href="/categories/tech/%E6%8A%80%E6%9C%AF/"> Tech/技术 </a>
+            </div>
+          <span class="more-meta"> 726 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#concept">Concept</a></li>
+        <li><a href="#fours-areas">Fours Areas</a></li>
+        <li><a href="#branches-and-head">Branches and Head</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>Explore some essential aspects of the version control tool Git.</p>
+<h2 id="concept">Concept</h2>
+<p>Initially, as a newcomer, I confused Git with GitHub (a platform), not realizing Git is fundamentally a local tool. Some refer to it as a version control tool, a file system, or even a database with key-value pairs.</p>
+<p>To harness its capabilities, it&rsquo;s crucial to understand the primary command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">git init
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This command creates a .git folder in your working directory, housing all information of your local repository. If deleted, your directory loses its Git repository status.</p>
+<p>Diving into the .git folder, let&rsquo;s explore its contents, focusing mainly on the objects folder that stores commit objects, tree objects (directories), and blob objects (file contents).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// all the files and sub folders under .git directory
+</span></span><span class="line"><span class="cl">-rw-r--r--@  1 tacodaddy  staff   35 Nov  8 10:58 COMMIT_EDITMSG
+</span></span><span class="line"><span class="cl">-rw-r--r--@  1 tacodaddy  staff   21 Nov  8 11:19 HEAD
+</span></span><span class="line"><span class="cl">-rw-r--r--   1 tacodaddy  staff   41 Feb 22  2023 ORIG_HEAD
+</span></span><span class="line"><span class="cl">-rw-r--r--   1 tacodaddy  staff  307 Feb 22  2023 config
+</span></span><span class="line"><span class="cl">-rw-r--r--   1 tacodaddy  staff   73 Feb 22  2023 description
+</span></span><span class="line"><span class="cl">drwxr-xr-x  15 tacodaddy  staff  480 Feb 22  2023 hooks
+</span></span><span class="line"><span class="cl">-rw-r--r--@  1 tacodaddy  staff  449 Nov  8 11:19 index
+</span></span><span class="line"><span class="cl">drwxr-xr-x   3 tacodaddy  staff   96 Feb 22  2023 info
+</span></span><span class="line"><span class="cl">drwxr-xr-x   4 tacodaddy  staff  128 Feb 22  2023 logs
+</span></span><span class="line"><span class="cl">drwxr-xr-x  31 tacodaddy  staff  992 Nov  8 10:58 objects
+</span></span><span class="line"><span class="cl">-rw-r--r--   1 tacodaddy  staff  112 Feb 22  2023 packed-refs
+</span></span><span class="line"><span class="cl">drwxr-xr-x   5 tacodaddy  staff  160 Feb 22  2023 refs
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// part of the sub folders under .git/objects/
+</span></span><span class="line"><span class="cl">drwxr-xr-x@ 3 tacodaddy  staff   96 Nov  8 10:58 02
+</span></span><span class="line"><span class="cl">drwxr-xr-x  3 tacodaddy  staff   96 Feb 22  2023 06
+</span></span><span class="line"><span class="cl">drwxr-xr-x@ 3 tacodaddy  staff   96 Nov  8 10:58 07
+</span></span><span class="line"><span class="cl">drwxr-xr-x  3 tacodaddy  staff   96 Feb 22  2023 09
+</span></span><span class="line"><span class="cl">drwxr-xr-x  3 tacodaddy  staff   96 Feb 22  2023 19
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Folders in objects are named using the first two characters of the 40-character SHA-1 hash of a Git object.
+All Git objects, including blobs, trees, and commits, are uniquely identified by a 40-character hexadecimal string.</p>
+<p>For instance, under folder 02, there&rsquo;s a file:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">// file under folder 02. filename is 38 character string with no extension
+</span></span><span class="line"><span class="cl">56b3b6f9d60a265d66a32bd3f238cd9f21d517
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// combine 02 with the value above -&gt; get new value with the length of 40 
+</span></span><span class="line"><span class="cl">0256b3b6f9d60a265d66a32bd3f238cd9f21d517
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">// and then decompress the file
+</span></span><span class="line"><span class="cl">❯ git cat-file -p 0256b3b6f9d60a265d66a32bd3f238cd9f21d517
+</span></span><span class="line"><span class="cl">tree 07fa58c37c411f8d9ffe9838af2b03735c845b31
+</span></span><span class="line"><span class="cl">parent 73ea321851ff2390c520a0cb8b2552efcae7852f
+</span></span><span class="line"><span class="cl">author Jeffery18-hub &lt;ljzmcs@gmail.com&gt; 1699466287 -0700
+</span></span><span class="line"><span class="cl">committer Jeffery18-hub &lt;ljzmcs@gmail.com&gt; 1699466287 -0700
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">modify test.text file, add Jeffery
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>This file is a commit object representing a snapshot of your project. &lsquo;Tree&rsquo; refers to the project structure, which can be viewed by decompressing:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">❯ git cat-file -p 07fa58c37
+</span></span><span class="line"><span class="cl">100644 blob 259148fa18f9fb7ef58563f4ff15fc7b172339fb	.gitignore
+</span></span><span class="line"><span class="cl">100644 blob 066204b8085bbb3cc45baca943dcc6f31d9b3f91	README.md
+</span></span><span class="line"><span class="cl">100644 blob 09436c0302a7aca747cbe85936b74ed8aa760f60	helloFromMain.cpp
+</span></span><span class="line"><span class="cl">100644 blob 681c281095180933698877e8b3ee11bf42be546d	output.txt
+</span></span><span class="line"><span class="cl">100644 blob f4d7ea5e7bba9c9d92711770e0064ade060f9949	test.txt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The &lsquo;parent&rsquo; tag indicates the preceding commit.
+A common query: How can I determine if a document is a blob, tree, or commit?</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">git cat-file -t &lt;sha1&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>So `git cat-file` is a really useful command if you want to dig the rabbit hole of your project version history. Flag `-p` means pretty print and `-t` shows object type.</p>
+<h2 id="fours-areas">Fours Areas</h2>
+<p>Understanding the four key areas - working directory, staging area, local repository, and remote repository- is crucial.</p>
+<p>`git add` moves changes to the staging area. `git commit` then commits these changes from staging to the local repository (located in the .git folder).</p>
+<p>Committing creates a snapshot of your project, encompassing file contents, directory trees, and metadata like time and committer. It yields a commit object linking to your latest commit.</p>
+<p>Each commit acts like a node pointing to its predecessor.</p>
+<h2 id="branches-and-head">Branches and Head</h2>
+<p>Different branches in Git means different pointers to versions. The image below shows a project with two branches(main and sub).
+<img src="/images/gitBasics/branches.png" alt="branches.png"></p>
+<p>Creating a new branch is akin to creating a new pointer. When committing across multiple branches, how does Git know which branch to commit to? Here, the HEAD pointer comes into play.</p>
+<p>HEAD typically points to the latest commit on the current branch but can be redirected to earlier commits if needed.
+<img src="/images/gitBasics/head.png" alt="head.png"></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>While many tutorials offer Git commands, truly understanding Git requires diving beneath the surface.
+A deeper comprehension of its inner workings can be invaluable in navigating complex scenarios.</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Jeffery@slc</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2023-11-08
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/git/">git</a>
+          <a href="/tags/github/">github</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/leetcode-198-dot-house-robber/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Leetcode 198.House Robber</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/functions-in-kotlin/">
+            <span class="next-text nav-default">Functions in Kotlin</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+     <div id="cusdis_thread"
+	 data-host="https://cusdis.com"
+	 data-app-id="aadc1f53-1b60-4e53-a4fa-4eafef613066"
+	 data-page-id="48899e31c6895c36f7532875ebc27279"
+	 data-page-url="https://Jeffery18-hub.github.io/post/fundamentals-of-git/"
+	 data-page-title="Fundamentals of Git"
+	 ></div>
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ljzmcs@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/jun-li-993b6b79/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/Jeffery18-hub" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/43710543/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://Jeffery18-hub.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>jun</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

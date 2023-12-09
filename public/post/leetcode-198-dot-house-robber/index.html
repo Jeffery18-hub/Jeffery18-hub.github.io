@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Leetcode 198.House Robber - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Jeffery@slc" /><meta name="description" content="Problem Description You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night. Given an integer array nums representing the amount of money of" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0 with theme even" />
+
+
+<link rel="canonical" href="https://Jeffery18-hub.github.io/post/leetcode-198-dot-house-robber/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Leetcode 198.House Robber" />
+<meta property="og:description" content="Problem Description You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night. Given an integer array nums representing the amount of money of" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://Jeffery18-hub.github.io/post/leetcode-198-dot-house-robber/" /><meta property="article:section" content="post" />
+
+<meta property="article:modified_time" content="2023-11-22T22:52:45-07:00" />
+<meta itemprop="name" content="Leetcode 198.House Robber">
+<meta itemprop="description" content="Problem Description You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night. Given an integer array nums representing the amount of money of">
+<meta itemprop="dateModified" content="2023-11-22T22:52:45-07:00" />
+<meta itemprop="wordCount" content="1845">
+<meta itemprop="keywords" content="House Robber,leetcode," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 198.House Robber"/>
+<meta name="twitter:description" content="Problem Description You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night. Given an integer array nums representing the amount of money of"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Jun</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Jun</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Leetcode 198.House Robber</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2023-11-22 </span>
+        <div class="post-category">
+            <a href="/categories/tech/%E6%8A%80%E6%9C%AF/"> Tech/技术 </a>
+            </div>
+          <span class="more-meta"> 1845 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#problem-description">Problem Description</a></li>
+        <li><a href="#solution-one--recursion-plus-backtracking">Solution One (Recursion + Backtracking)</a>
+          <ul>
+            <li><a href="#basic-idea">Basic Idea</a></li>
+          </ul>
+        </li>
+        <li><a href="#solution-two--iteration">Solution Two (Iteration)</a>
+          <ul>
+            <li><a href="#basic-idea">Basic Idea</a></li>
+          </ul>
+        </li>
+        <li><a href="#解法一-递归-plus-回溯">解法一（递归 + 回溯）</a>
+          <ul>
+            <li><a href="#基本思路">基本思路</a></li>
+          </ul>
+        </li>
+        <li><a href="#解法二-迭代">解法二（迭代）</a>
+          <ul>
+            <li><a href="#基本思路">基本思路</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="problem-description">Problem Description</h2>
+<p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night.</p>
+<p>Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.</p>
+<p>Example 1:</p>
+<p>Input: nums = [1,2,3,1]
+Output: 4
+Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
+Total amount you can rob = 1 + 3 = 4.
+Example 2:</p>
+<p>Input: nums = [2,7,9,3,1]
+Output: 12
+Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
+Total amount you can rob = 2 + 9 + 1 = 12.</p>
+<p>Here are two approaches to solving the classic &ldquo;House Robber&rdquo; problem: Recursion + Backtracking, and Iteration. Both methods apply dynamic programming effectively, albeit in different ways.</p>
+<h2 id="solution-one--recursion-plus-backtracking">Solution One (Recursion + Backtracking)</h2>
+<p>This solution I found online (author: labuladong) uses recursion and backtracking. I am not sure if this counts as dynamic programming.</p>
+<h3 id="basic-idea">Basic Idea</h3>
+<ol>
+<li>Standing in front of the i-th house, the robber has two options: rob it and jump to the i + 2-th house to avoid being caught, or don’t rob it and move to the i + 1-th house.</li>
+<li>Recursive function definition: The parameters are the nums array and the starting index. The return value is the maximum value that can be obtained from the starting index. The recursion stops when the index is greater than or equal to the length of nums, meaning there are no more houses.</li>
+<li>Below, I drew a recursion tree based on the example -&gt; nums = [1,2,3,1]. The green arrows represent robbing, the red arrows represent not robbing, the blue arrows represent returning values to the upper layer of recursion, and the black dashed circles represent exceeding the maximum index of the house, meaning such a node doesn’t exist.
+For the top node with a value of 1, you can see that the left tree returns a value of 3, and the right side also returns 3. So, at this initial stage, if the robber chooses to rob, the maximum value is 4, and if not, the maximum value is 3.
+<div align="center">
+<img src="/images/houseRobber/tree1.png" style="width: 400px; height: 400px;">
+</div>
+</li>
+<li>The Python implementation is as follows:
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">       <span class="bp">self</span><span class="o">.</span><span class="n">memo</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># memory list to avoid duplicate computing</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="k">def</span> <span class="nf">rob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">       <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="c1"># initialize the memory list with values -1</span>
+</span></span><span class="line"><span class="cl">       <span class="bp">self</span><span class="o">.</span><span class="n">memo</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">recursion</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="k">def</span> <span class="nf">recursion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">       <span class="k">if</span> <span class="n">start</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">memo</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">memo</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="n">res</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">recursion</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">start</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">recursion</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="bp">self</span><span class="o">.</span><span class="n">memo</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="k">return</span> <span class="n">res</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>From the Python code, you can see that it uses pruning. The purple marks in the diagram below show two identical nodes, which are the houses with a value of 3. If no pruning is done, the maximum value will be recalculated, increasing the complexity. Therefore, the code includes a memo array to check whether a node has been computed before. If it has, it directly returns the value without continuing recursion.</li>
+</ol>
+<div align="center">
+    <img src="/images/houseRobber/tree2.png" style="width: 400px; height: 400px;">
+</div>
+<h2 id="solution-two--iteration">Solution Two (Iteration)</h2>
+<p>The solution I came up with myself seems more in line with the idea of dynamic programming (in my opinion). It is based on past states, establishes a state transition equation, and then deduces the current state, ultimately obtaining the maximum value through iteration.</p>
+<h3 id="basic-idea">Basic Idea</h3>
+<ol>
+<li>Standing at the current node, i.e., the i-th house, if the robber robs, then the adjacent left house cannot be robbed. The maximum value corresponding to the i-th house is based on the maximum value of the i - 2-th house; if not robbing, then the maximum value of the i-th house is based on the i - 1-th house.</li>
+<li>Initialize the dp array, where dp[0] = nums[0], dp[1] = max(nums[1], dp[0]).</li>
+<li>State transition equation: dp[i] = max(dp[i - 1], dp[i - 2] + nums[i]).</li>
+<li>The final maximum value obtained is dp[len(nums) - 1].</li>
+</ol>
+<p>The code is as follows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">rob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">          <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>I still prefer iteration because, firstly, the code is more concise, and secondly, it requires less space.</p>
+<p>The English part of this blog is translated by chatGPT and below is the original Chinese version.</p>
+<p>经典动态规划题目了，两种解决思路：</p>
+<h2 id="解法一-递归-plus-回溯">解法一（递归 + 回溯）</h2>
+<p>这是我网上看到的题解（作者：labuladong），是采用递归和回溯的思路，但我不是很确定这是不是算作动态规划。</p>
+<h3 id="基本思路">基本思路</h3>
+<ol>
+<li>强盗站在第i个house前，如果选择抢劫，为了避免被抓，就要跳到第i + 2个房间；不抢，则跳至第i + 1个房间。</li>
+<li>递归函数定义：参数一个是nums数组，一个是起始index， 返回值为基于起始index，能够获取的最大价值。 递归退出：在index大于等于nums的长度，返回0，也就是不存在对应的house了。</li>
+<li>下面我根据题目的例子[1,2,3,1], 手绘了递归树，其中绿色箭头表示rob，红色箭头表示不去rob，蓝色箭头表示向上一层递归返回值，黑色虚线圆圈表示超过了house最大index，不存在这样一个节点。</li>
+</ol>
+<p>对于最顶层的值为1的节点，可以看到左树的返回值为3，右边同样为3，那么如果在这个起始阶段，robber选择抢劫的话，最大价值为4，不抢劫的话最大价值就为3。</p>
+   <div align="center">
+    <img src="/images/houseRobber/tree1.png" style="width: 400px; height: 400px;">
+   </div>
+<ol start="4">
+<li>python实现的代码如下
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"> <span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">memo</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># memory list to avoid duplicate computing</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">rob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># init the memory list with values -1</span>
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">memo</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">recursion</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">recursion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">start</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">memo</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">memo</span><span class="p">[</span><span class="n">start</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">recursion</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">start</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">           <span class="bp">self</span><span class="o">.</span><span class="n">recursion</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="bp">self</span><span class="o">.</span><span class="n">memo</span><span class="p">[</span><span class="n">start</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>从python代码可以看到其使用了剪支操作，下图紫色标记出来两个相同的节点，也就是价值为3的房子，如果不做任何剪支的话就会重复计算最大值，增加了复杂度，所以代码中加入了memo数组，用于判断该节点之前是否被计算过，如果计算过就直接返回，不再继续递归。</li>
+</ol>
+   <div align="center">
+    <img src="/images/houseRobber/tree2.png" style="width: 400px; height: 400px;">
+   </div>
+<h2 id="解法二-迭代">解法二（迭代）</h2>
+<p>我自己想出来的题解比较符合动态规划思想（自我感觉），基于过去的状态，建立状态转移方程，进而推导出当前状态，最终通过迭代方式取得最大价值。</p>
+<h3 id="基本思路">基本思路</h3>
+<ol>
+<li>站在当前节点，也就是说第i个house，robber如果抢劫，那么相邻左边的house就不能抢，第i个house对应的最大价值，是基于第i - 2的最大价值得来的；如果不抢劫，则第i个house对应的最大价值，是基于第i - 1个house得来的</li>
+<li>初始化dp数组，其中dp[0] = nums[0], dp[1] = max(nums[1], dp[0])</li>
+<li>状态转移方程： dp[i] = max(dp[i - 1], dp[i - 2]+ nums[i])</li>
+<li>最后求得的最大价值就是dp[len(nums) - 1]</li>
+</ol>
+<p>代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">def</span> <span class="nf">rob</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="n">dp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">nums</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">          <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>我还是比较喜欢迭代，一是代码更加简洁，二是空间开销更少。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Jeffery@slc</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2023-11-22
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/house-robber/">House Robber</a>
+          <a href="/tags/leetcode/">leetcode</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/top-k-frequent-elements-and-heapq-in-python/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Top K Frequent Elements and Heapq in Python</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/fundamentals-of-git/">
+            <span class="next-text nav-default">Fundamentals of Git</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+     <div id="cusdis_thread"
+	 data-host="https://cusdis.com"
+	 data-app-id="aadc1f53-1b60-4e53-a4fa-4eafef613066"
+	 data-page-id="486ba2382b763822d720a4439af7ec6c"
+	 data-page-url="https://Jeffery18-hub.github.io/post/leetcode-198-dot-house-robber/"
+	 data-page-title="Leetcode 198.House Robber"
+	 ></div>
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:ljzmcs@gmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://www.linkedin.com/in/jun-li-993b6b79/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/Jeffery18-hub" class="iconfont icon-github" title="github"></a>
+      <a href="https://space.bilibili.com/43710543/" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://Jeffery18-hub.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>jun</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>binary tree on Even - A super concise theme for Hugo</title>
+    <link>https://Jeffery18-hub.github.io/tags/binary-tree/</link>
+    <description>Recent content in binary tree on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 13 Aug 2023 12:22:51 -0600</lastBuildDate><atom:link href="https://Jeffery18-hub.github.io/tags/binary-tree/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recursively Traverse a Binary Tree</title>
+      <link>https://Jeffery18-hub.github.io/post/recursively-traverse-a-binary-tree/</link>
+      <pubDate>Sun, 13 Aug 2023 12:22:51 -0600</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/recursively-traverse-a-binary-tree/</guid>
+      <description>Traversal Order A binary tree offers three primary traversal methods: Pre-order, In-order, and Post-order. 1 2 3 4 5 6 1 / \ 2 3 / \ \ 4 5 6 pre-order: 1-&amp;gt;2-&amp;gt;4-&amp;gt;5-&amp;gt;3-&amp;gt;6 in-order: 4-&amp;gt;2-&amp;gt;5-&amp;gt;1-&amp;gt;3-&amp;gt;6 post-prder: 4-&amp;gt;5-&amp;gt;2-&amp;gt;6-&amp;gt;3-&amp;gt;1 The root node appears first in pre-order traversal and last in post-order traversal. Leveraging this characteristic, one can uniquely construct a binary tree when provided with combinations of preorder-inorder or postorder-inorder arrays. Note</description>
+    </item>
+    
+  </channel>
+</rss>

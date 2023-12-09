@@ -10,13 +10,188 @@
   
   <url>
     <loc>https://Jeffery18-hub.github.io/</loc>
-    <lastmod>2023-03-06T15:06:54-07:00</lastmod>
+    <lastmod>2023-12-09T14:12:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/leetcode.347/</loc>
+    <lastmod>2023-12-09T14:12:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/min-heap/</loc>
+    <lastmod>2023-12-09T14:12:48-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://Jeffery18-hub.github.io/post/</loc>
+    <lastmod>2023-12-09T14:12:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/python/</loc>
+    <lastmod>2023-12-09T14:12:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/</loc>
+    <lastmod>2023-12-09T14:12:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/post/top-k-frequent-elements-and-heapq-in-python/</loc>
+    <lastmod>2023-12-09T14:12:48-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/house-robber/</loc>
+    <lastmod>2023-11-22T22:52:45-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/leetcode/</loc>
+    <lastmod>2023-11-22T22:52:45-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/post/leetcode-198-dot-house-robber/</loc>
+    <lastmod>2023-11-22T22:52:45-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/post/fundamentals-of-git/</loc>
+    <lastmod>2023-11-08T17:51:20-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/git/</loc>
+    <lastmod>2023-11-08T17:51:20-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/github/</loc>
+    <lastmod>2023-11-08T17:51:20-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/function/</loc>
+    <lastmod>2023-10-10T12:25:04-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/post/functions-in-kotlin/</loc>
+    <lastmod>2023-10-10T12:25:04-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/kotlin/</loc>
+    <lastmod>2023-10-10T12:25:04-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/three.js/</loc>
+    <lastmod>2023-10-04T11:39:57-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/post/three-dot-js-fundamentals/</loc>
+    <lastmod>2023-10-04T11:39:57-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/post/0-1-knapsack-problem/</loc>
+    <lastmod>2023-10-01T23:17:32-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/knapsack-problem/</loc>
+    <lastmod>2023-10-01T23:17:32-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/mexico/</loc>
+    <lastmod>2023-09-23T12:15:58-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/travel/</loc>
+    <lastmod>2023-09-23T12:15:58-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/post/%E5%9D%8E%E6%98%86%E4%B9%8B%E6%97%85/</loc>
+    <lastmod>2023-09-23T12:15:58-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/binary-tree/</loc>
+    <lastmod>2023-08-13T12:22:51-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/post/recursively-traverse-a-binary-tree/</loc>
+    <lastmod>2023-08-13T12:22:51-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/computer-science/</loc>
+    <lastmod>2023-03-06T15:06:54-07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/tags/operating-system/</loc>
     <lastmod>2023-03-06T15:06:54-07:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -36,7 +211,13 @@
   </url>
   
   <url>
-    <loc>https://Jeffery18-hub.github.io/tags/</loc>
+    <loc>https://Jeffery18-hub.github.io/categories/tech/%E6%8A%80%E6%9C%AF/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://Jeffery18-hub.github.io/categories/travel/%E6%97%85%E8%A1%8C/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

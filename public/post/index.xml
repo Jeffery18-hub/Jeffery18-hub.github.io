@@ -6,7 +6,79 @@
     <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Mar 2023 15:06:54 -0700</lastBuildDate><atom:link href="https://Jeffery18-hub.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Dec 2023 14:12:48 -0700</lastBuildDate><atom:link href="https://Jeffery18-hub.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Top K Frequent Elements and Heapq in Python</title>
+      <link>https://Jeffery18-hub.github.io/post/top-k-frequent-elements-and-heapq-in-python/</link>
+      <pubDate>Sat, 09 Dec 2023 14:12:48 -0700</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/top-k-frequent-elements-and-heapq-in-python/</guid>
+      <description>Heapq in Python This module provides an implementation of the heap queue algorithm, also known as the priority queue algorithm. Heaps are binary trees for which every parent node has a value less than or equal to any of its children. This implementation uses arrays for which heap[k] &amp;lt;= heap[2*k+1] and heap[k] &amp;lt;= heap[2*k+2] for all k, counting elements from zero. For the sake of comparison, non-existing elements are considered</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 198.House Robber</title>
+      <link>https://Jeffery18-hub.github.io/post/leetcode-198-dot-house-robber/</link>
+      <pubDate>Wed, 22 Nov 2023 22:52:45 -0700</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/leetcode-198-dot-house-robber/</guid>
+      <description>Problem Description You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and it will automatically contact the police if two adjacent houses were broken into on the same night. Given an integer array nums representing the amount of money of</description>
+    </item>
+    
+    <item>
+      <title>Fundamentals of Git</title>
+      <link>https://Jeffery18-hub.github.io/post/fundamentals-of-git/</link>
+      <pubDate>Wed, 08 Nov 2023 17:51:20 -0700</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/fundamentals-of-git/</guid>
+      <description>Explore some essential aspects of the version control tool Git. Concept Initially, as a newcomer, I confused Git with GitHub (a platform), not realizing Git is fundamentally a local tool. Some refer to it as a version control tool, a file system, or even a database with key-value pairs. To harness its capabilities, it&amp;rsquo;s crucial to understand the primary command: 1 git init This command creates a .git folder in</description>
+    </item>
+    
+    <item>
+      <title>Functions in Kotlin</title>
+      <link>https://Jeffery18-hub.github.io/post/functions-in-kotlin/</link>
+      <pubDate>Tue, 10 Oct 2023 12:25:04 -0600</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/functions-in-kotlin/</guid>
+      <description>In this post, I aim to summarize the essential aspects of function syntax in Kotlin. While this post touches upon some commonly used functionalities, especially in Android development, it doesn&amp;rsquo;t delve deep into the advanced usages. Regular Functions Regular functions are the basic building blocks. Here&amp;rsquo;s a simple function that compares the lengths of two strings: 1 2 3 fun compare(a: String, b: String): Boolean { return a.length &amp;lt; b.length</description>
+    </item>
+    
+    <item>
+      <title>Three.js Fundamentals</title>
+      <link>https://Jeffery18-hub.github.io/post/three-dot-js-fundamentals/</link>
+      <pubDate>Wed, 04 Oct 2023 11:39:57 -0600</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/three-dot-js-fundamentals/</guid>
+      <description>This blog post is primarily intended to document my learning journey with three.js. At its core, this framework is a JavaScript library built on top of WebGL, designed to help developers efficiently create 3D models and scenes. Here are some fundamental concepts and code snippets: Primary Classes First, let&amp;rsquo;s take a glance at the structural diagram: Renderer As seen from the above structural diagram, right at the top is the</description>
+    </item>
+    
+    <item>
+      <title>0-1 Knapsack Problem</title>
+      <link>https://Jeffery18-hub.github.io/post/0-1-knapsack-problem/</link>
+      <pubDate>Sun, 01 Oct 2023 23:17:32 -0600</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/0-1-knapsack-problem/</guid>
+      <description>Introduction to the 0-1 Knapsack Problem The 0-1 Knapsack problem is a classic optimization problem. Imagine you have a bag with a certain weight capacity, and you have a set of items, each with its own weight and value. The problem is to determine which items to include in the bag to maximize its total value without exceeding its weight capacity. Brute Force The simplest way to tackle the 0-1</description>
+    </item>
+    
+    <item>
+      <title>坎昆之旅</title>
+      <link>https://Jeffery18-hub.github.io/post/%E5%9D%8E%E6%98%86%E4%B9%8B%E6%97%85/</link>
+      <pubDate>Sat, 23 Sep 2023 12:15:58 -0600</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/%E5%9D%8E%E6%98%86%E4%B9%8B%E6%97%85/</guid>
+      <description>多年之后再次来到墨西哥，莫名有点感动，当年离开的时候和当地的朋友一起吃饭，朋友说我们以后应该很难再见面了。 这次带老婆来墨国，最终还是选择了坎</description>
+    </item>
+    
+    <item>
+      <title>Recursively Traverse a Binary Tree</title>
+      <link>https://Jeffery18-hub.github.io/post/recursively-traverse-a-binary-tree/</link>
+      <pubDate>Sun, 13 Aug 2023 12:22:51 -0600</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/recursively-traverse-a-binary-tree/</guid>
+      <description>Traversal Order A binary tree offers three primary traversal methods: Pre-order, In-order, and Post-order. 1 2 3 4 5 6 1 / \ 2 3 / \ \ 4 5 6 pre-order: 1-&amp;gt;2-&amp;gt;4-&amp;gt;5-&amp;gt;3-&amp;gt;6 in-order: 4-&amp;gt;2-&amp;gt;5-&amp;gt;1-&amp;gt;3-&amp;gt;6 post-prder: 4-&amp;gt;5-&amp;gt;2-&amp;gt;6-&amp;gt;3-&amp;gt;1 The root node appears first in pre-order traversal and last in post-order traversal. Leveraging this characteristic, one can uniquely construct a binary tree when provided with combinations of preorder-inorder or postorder-inorder arrays. Note</description>
+    </item>
+    
     <item>
       <title>操作系统是如何被加载的？</title>
       <link>https://Jeffery18-hub.github.io/post/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%98%AF%E5%A6%82%E4%BD%95%E8%A2%AB%E5%8A%A0%E8%BD%BD%E7%9A%84/</link>

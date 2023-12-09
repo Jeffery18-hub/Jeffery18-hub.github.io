@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>three.js on Even - A super concise theme for Hugo</title>
+    <link>https://Jeffery18-hub.github.io/tags/three.js/</link>
+    <description>Recent content in three.js on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 04 Oct 2023 11:39:57 -0600</lastBuildDate><atom:link href="https://Jeffery18-hub.github.io/tags/three.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Three.js Fundamentals</title>
+      <link>https://Jeffery18-hub.github.io/post/three-dot-js-fundamentals/</link>
+      <pubDate>Wed, 04 Oct 2023 11:39:57 -0600</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/three-dot-js-fundamentals/</guid>
+      <description>This blog post is primarily intended to document my learning journey with three.js. At its core, this framework is a JavaScript library built on top of WebGL, designed to help developers efficiently create 3D models and scenes. Here are some fundamental concepts and code snippets: Primary Classes First, let&amp;rsquo;s take a glance at the structural diagram: Renderer As seen from the above structural diagram, right at the top is the</description>
+    </item>
+    
+  </channel>
+</rss>

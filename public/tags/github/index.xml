@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github on Even - A super concise theme for Hugo</title>
+    <link>https://Jeffery18-hub.github.io/tags/github/</link>
+    <description>Recent content in github on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 08 Nov 2023 17:51:20 -0700</lastBuildDate><atom:link href="https://Jeffery18-hub.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fundamentals of Git</title>
+      <link>https://Jeffery18-hub.github.io/post/fundamentals-of-git/</link>
+      <pubDate>Wed, 08 Nov 2023 17:51:20 -0700</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/fundamentals-of-git/</guid>
+      <description>Explore some essential aspects of the version control tool Git. Concept Initially, as a newcomer, I confused Git with GitHub (a platform), not realizing Git is fundamentally a local tool. Some refer to it as a version control tool, a file system, or even a database with key-value pairs. To harness its capabilities, it&amp;rsquo;s crucial to understand the primary command: 1 git init This command creates a .git folder in</description>
+    </item>
+    
+  </channel>
+</rss>

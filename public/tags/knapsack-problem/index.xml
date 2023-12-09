@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Knapsack Problem on Even - A super concise theme for Hugo</title>
+    <link>https://Jeffery18-hub.github.io/tags/knapsack-problem/</link>
+    <description>Recent content in Knapsack Problem on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 01 Oct 2023 23:17:32 -0600</lastBuildDate><atom:link href="https://Jeffery18-hub.github.io/tags/knapsack-problem/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>0-1 Knapsack Problem</title>
+      <link>https://Jeffery18-hub.github.io/post/0-1-knapsack-problem/</link>
+      <pubDate>Sun, 01 Oct 2023 23:17:32 -0600</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/0-1-knapsack-problem/</guid>
+      <description>Introduction to the 0-1 Knapsack Problem The 0-1 Knapsack problem is a classic optimization problem. Imagine you have a bag with a certain weight capacity, and you have a set of items, each with its own weight and value. The problem is to determine which items to include in the bag to maximize its total value without exceeding its weight capacity. Brute Force The simplest way to tackle the 0-1</description>
+    </item>
+    
+  </channel>
+</rss>

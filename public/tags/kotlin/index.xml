@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kotlin on Even - A super concise theme for Hugo</title>
+    <link>https://Jeffery18-hub.github.io/tags/kotlin/</link>
+    <description>Recent content in kotlin on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Oct 2023 12:25:04 -0600</lastBuildDate><atom:link href="https://Jeffery18-hub.github.io/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Functions in Kotlin</title>
+      <link>https://Jeffery18-hub.github.io/post/functions-in-kotlin/</link>
+      <pubDate>Tue, 10 Oct 2023 12:25:04 -0600</pubDate>
+      
+      <guid>https://Jeffery18-hub.github.io/post/functions-in-kotlin/</guid>
+      <description>In this post, I aim to summarize the essential aspects of function syntax in Kotlin. While this post touches upon some commonly used functionalities, especially in Android development, it doesn&amp;rsquo;t delve deep into the advanced usages. Regular Functions Regular functions are the basic building blocks. Here&amp;rsquo;s a simple function that compares the lengths of two strings: 1 2 3 fun compare(a: String, b: String): Boolean { return a.length &amp;lt; b.length</description>
+    </item>
+    
+  </channel>
+</rss>
