@@ -6,7 +6,7 @@
 * Blog Ideas
 
     
-** finished TODO 操作系统是如何被加载的？
+** finished 操作系统是如何被加载的？
 :PROPERTIES:
 :EXPORT_FILE_NAME: 操作系统是如何被加载的
 :END:
@@ -55,7 +55,6 @@ BootLoader将硬盘上存储的操作系统内核加载到相应的的内存地�
 2. 清华大学 陈渝 操作系统原理课程 B站有很多他的课程视频<br>
 3. intel官方网站：https://www.intel.com/content/www/us/en/gaming/resources/how-to-update-bios.html
 
-   
 ** finished Recursively Traverse a Binary Tree
 :PROPERTIES:
 :EXPORT_FILE_NAME: recursively-traverse-a-binary-tree
@@ -150,7 +149,7 @@ Steps 1.9 to 2.2: As both the left and right children of the leaf node are null,
 Step 2.3: Return to node 2 and print its value, resulting in the post-order output 4->5->2 for the left subtree.
 
 This is just a segment of the recursive process, providing my understanding into the mechanics of tree traversal when gruelingly grinding on LeetCode.
-** finished   坎昆之旅
+** finished 坎昆之旅
 :PROPERTIES:
 :EXPORT_FILE_NAME: 坎昆之旅
 :END:
@@ -597,7 +596,6 @@ fun foo(x: String, y: String, z: (a: String, b: String) -> Boolean) {
 foo("hi", "hello") { a, b -> a.length < b.length }
 #+END_SRC
 
-
 ** finished Fundamentals of Git
 :PROPERTIES:
 :EXPORT_FILE_NAME: fundamentals-of-git
@@ -720,12 +718,13 @@ HEAD typically points to the latest commit on the current branch but can be redi
 While many tutorials offer Git commands, truly understanding Git requires diving beneath the surface.
 A deeper comprehension of its inner workings can be invaluable in navigating complex scenarios.
 
-** TODO Leetcode 198.House Robber
+** finished Leetcode 198.House Robber
 :PROPERTIES:
 :EXPORT_FILE_NAME: leetcode-198-dot-house-robber
 :END:
 
 
+- State "finished"   from              [2024-04-25 Thu 23:02]
 Here are two approaches to solving the classic "House Robber" problem: Recursion + Backtracking, and Iteration. Both methods apply dynamic programming effectively, albeit in different ways.
 
 *** Solution One (Recursion + Backtracking)
@@ -867,7 +866,6 @@ The English part of this blog is translated by chatGPT and below is the original
 
 我还是比较喜欢迭代，一是代码更加简洁，二是空间开销更少。
 
-
 ** finished Top K Frequent Elements and Heapq in Python
 :PROPERTIES:
 :EXPORT_FILE_NAME: top-k-frequent-elements-and-heapq-in-python
@@ -970,5 +968,135 @@ class Solution:
 2. Time complexity  of inserting a node into min heap is the height of tree, so here heappush will cost O(logk)
 
 3. Outer loop will iterate k times and k <= n. So the total time compelxity of this solution is O(klogk).
+   
+** finished Implementing Stack and Queue in JavaScript
+:PROPERTIES:
+:EXPORT_FILE_NAME: stack-and-queue-in-javascript
+:END:
+
+- State "finished"   from              [2024-04-25 Thu 23:21]
+In JavaScript, both stack and queue data structures are commonly implemented using arrays.
+Here’s a brief conclusion on how to implement these structures, excluding priority queues which are slightly more complex and typically use third-party libraries.
+
+*** Stack
+Stacks follow the LIFO principle. Using JavaScript arrays, we can mimic this behavior easily.
+
+1. create a stack
+#+BEGIN_SRC javascript
+  const stack = [];
+#+END_SRC
+
+2. push to the top of stack 
+#+BEGIN_SRC javascript
+   stack.push(0);
+   stack.push(1);
+   stack.push(2);
+
+   // top side: 2 1 0
+  
+#+END_SRC
 
 
+3. pop from the top of stack
+#+BEGIN_SRC javascript
+  const poped = stack.pop(); // here the poped value is 2.
+#+END_SRC
+
+
+*** Queue
+
+1. create a queue
+#+BEGIN_SRC javascript
+  const queue = [];
+#+END_SRC
+
+
+2. add to the end of a queue
+#+BEGIN_SRC javascript
+  queue.push(0, 1, 2); // [0, 1, 2] -> 
+#+END_SRC
+
+
+3. pop from the front of a queue
+#+BEGIN_SRC javascript
+  const poped = queue.shift()
+#+END_SRC
+
+
+*** Priority Queue
+
+Priority queue is a bit tricky and if you are working on leetcode questions, you can use some third-party module, like
+5.4.0 version of datastructures-js/priority-queue which is recommended officially. Note that datastructures-js/priority-queue now has
+new versions v6.
+
+The Priority queue is implemented via data structure of heap, and heap is based on the array as well.
+
+I found that using MinPriorityQueue and MaxPriorityQueue are handy. For more info about how to use them, please check the github reop link.https://github.com/datastructures-js/priority-queue/tree/v5
+
+1. import the module(not neccessary in leetcode)
+#+BEGIN_SRC javascript
+  // type -> module (ES6)
+    import {
+    MinPriorityQueue,
+    MaxPriorityQueue,
+    PriorityQueue,
+  } from "@datastructures-js/priority-queue";
+#+END_SRC
+
+2. enqueue
+If the object you added into the queue is just a number, the implementation will use the value of number as the priority. If not, you should explicitly set the priority.
+
+#+BEGIN_SRC javascript
+  // numeric queue is pretty simple
+  numericMinPriorityqueue.enqueue(1)
+  numericMinPriorityqueue.enqueue(2)
+  numericMinPriorityqueue.enqueue(3)
+
+  // numericminpriorityqueue.front() == 1
+
+  carsMinPriorityqueue.enqueue(car1, car1.price); // if car1.price == 5000
+  carsMinPriorityqueue.enqueue(car2, car2.price); // if car2.price == 4000
+  carsMinPriorityqueue.enqueue(car1, car3.price); // if car3.price == 6000
+
+  // carsminpriorityqueue.front() == car2 // car2 has the cheapest price 4000
+
+#+END_SRC
+
+3. dequeue
+`dequeue` will return the element with highest priority and pop it off from the queue,
+while `front` and `back` methods just peek the element with highest and lowest priority. 
+#+BEGIN_SRC javascript
+  const highestNumber = numericminpriorityqueue.dequeue() // 1
+  const highestCar = carsminpriorityqueue.dequeue() // car2
+#+END_SRC
+
+4. construct from a array
+The array contains element-priority pairs(array of two elements)
+#+BEGIN_SRC javascript
+ const carsMinQueue = MinPriorityQueue.from([
+  ["tesla", 90000],
+  ["toyota", 50000],
+  ["byd", 60000],
+]);
+
+console.log(carsMinQueue.front()); //  { priority: 50000, element: 'toyota' }
+#+END_SRC
+
+*** Miscellaneous
+Array has another two methods which are super useful that need to be recorded in this post.
+
+1. slice
+#+BEGIN_SRC javascript
+  const array = [1,2,3,4];
+  const array_copy1 = array.slice(); // [1,2,3,4] without params, return the complete copy
+  const array_copy1 = array.slice(1, ); // [2,3,4] start position, end position is null
+  const array_copy1 = array.slice(1, 3); // [2,3] end index is not included 
+#+END_SRC
+
+2. splice
+#+BEGIN_SRC javascript
+  const array = [1,2,3,4,5]
+  array.splice(1,2); // remove 2 elements from index 1 inclusivly:  array == [1,4,5] 
+  array.slice(1,1,6,7); // remove one element from index 1 and insert 6 and 7: array == [1,6,7,5]  
+  array.slice(1,0,8); // dont remove and insert 8 at index 1:  array == [1,8,6,7,5]
+#+END_SRC
