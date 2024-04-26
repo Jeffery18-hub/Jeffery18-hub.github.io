@@ -7,8 +7,6 @@ tags = ["javascript", "data structure", "stack", "queue", "priority queue", "lee
 categories = ["Tech/技术"]  
 +++
 
-- State "finished"   from              [2024-04-25 Thu 23:21]
-
 In JavaScript, both stack and queue data structures are commonly implemented using arrays.  
 Here’s a brief conclusion on how to implement these structures, excluding priority queues which are slightly more complex and typically use third-party libraries.
 
