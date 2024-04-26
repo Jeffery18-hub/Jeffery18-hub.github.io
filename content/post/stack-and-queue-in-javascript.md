@@ -20,7 +20,7 @@ Stacks follow the LIFO principle. Using JavaScript arrays, we can mimic this beh
 const stack = [];
 ```
 
-1. push to the top of stack
+2. push to the top of stack
 
 ```javascript
 stack.push(0);
@@ -30,7 +30,7 @@ stack.push(2);
 // top side: 2 1 0
 ```
 
-1. pop from the top of stack
+3. pop from the top of stack
 
 ```javascript
 const poped = stack.pop(); // here the poped value is 2.
@@ -44,13 +44,13 @@ const poped = stack.pop(); // here the poped value is 2.
 const queue = [];
 ```
 
-1. add to the end of a queue
+2. add to the end of a queue
 
 ```javascript
 queue.push(0, 1, 2); // [0, 1, 2] ->
 ```
 
-1. pop from the front of a queue
+3. pop from the front of a queue
 
 ```javascript
 const poped = queue.shift()
@@ -77,7 +77,7 @@ I found that using MinPriorityQueue and MaxPriorityQueue are handy. For more inf
 } from "@datastructures-js/priority-queue";
 ```
 
-1. enqueue
+2. enqueue
 
 If the object you added into the queue is just a number, the implementation will use the value of number as the priority. If not, you should explicitly set the priority.
 
@@ -96,7 +96,7 @@ carsMinPriorityqueue.enqueue(car1, car3.price); // if car3.price == 6000
 // carsminpriorityqueue.front() == car2 // car2 has the cheapest price 4000
 ```
 
-1. dequeue
+3. dequeue
 
 `dequeue` will return the element with highest priority and pop it off from the queue,  
 while `front` and `back` methods just peek the element with highest and lowest priority.
@@ -106,7 +106,7 @@ const highestNumber = numericminpriorityqueue.dequeue() // 1
 const highestCar = carsminpriorityqueue.dequeue() // car2
 ```
 
-1. construct from a array
+4. construct from a array
 
 The array contains element-priority pairs(array of two elements)
 
@@ -133,7 +133,7 @@ const array_copy1 = array.slice(1, ); // [2,3,4] start position, end position is
 const array_copy1 = array.slice(1, 3); // [2,3] end index is not included
 ```
 
-1. splice
+2. splice
 
 ```javascript
 const array = [1,2,3,4,5]
