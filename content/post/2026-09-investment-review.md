@@ -1,6 +1,6 @@
 +++
 title = "2026年9月投资月报"
-date = 2026-10-08T09:30:00-06:00
+date = 2026-10-07T18:00:00-06:00
 draft = false
 author = "Jeffery@slc"
 tags = ["投资", "Covered Call", "Nike", "MSTR", "Bitcoin"]
